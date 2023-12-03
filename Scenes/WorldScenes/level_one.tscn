@@ -1352,9 +1352,9 @@ sources/2 = SubResource("TileSetAtlasSource_woeex")
 [node name="LevelOne" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -29.0
+offset_left = -31.0
 offset_top = -25.0
-offset_right = 954.0
+offset_right = 952.0
 offset_bottom = 570.0
 texture = ExtResource("1_hqn8c")
 
