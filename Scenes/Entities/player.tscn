@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://tj0d2oeaip0a"]
+[gd_scene load_steps=29 format=3 uid="uid://tj0d2oeaip0a"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_ap6fg"]
 [ext_resource type="Texture2D" uid="uid://durjvmpw1r8be" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_8sv5p"]
+[ext_resource type="Texture2D" uid="uid://ddg13l44xbso0" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 02.png" id="2_enje8"]
 [ext_resource type="Texture2D" uid="uid://dywtmnmhac0b5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_x0kj0"]
 [ext_resource type="Texture2D" uid="uid://cqdlfpdx45aho" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_37obr"]
 [ext_resource type="Texture2D" uid="uid://bk1kwt3wdpwen" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="5_3bdcs"]
@@ -16,27 +17,19 @@
 [ext_resource type="Texture2D" uid="uid://b0fq7qpy20hfo" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 01.png" id="14_uue1v"]
 [ext_resource type="Texture2D" uid="uid://byuq7bds336ec" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 02.png" id="15_dvp7j"]
 [ext_resource type="Texture2D" uid="uid://dkre81t242q48" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png" id="16_3eh0k"]
+[ext_resource type="Texture2D" uid="uid://dt50mg8wnph7k" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 01.png" id="18_qt75l"]
+[ext_resource type="Texture2D" uid="uid://cooa7vy78hdol" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 03.png" id="19_ubck4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1pghn"]
+radius = 9.0
+height = 20.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6kk7y"]
-radius = 11.0
-height = 26.0
+radius = 6.0
+height = 24.0
 
-[sub_resource type="Animation" id="Animation_rwxk3"]
-resource_name = "Idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_8sv5p"), ExtResource("3_x0kj0"), ExtResource("4_37obr"), ExtResource("5_3bdcs"), ExtResource("6_v3kp0")]
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_dchny"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_fy6ly"]
 resource_name = "Fall"
@@ -55,8 +48,8 @@ tracks/0/keys = {
 "values": [ExtResource("7_p2txj")]
 }
 
-[sub_resource type="Animation" id="Animation_aqasx"]
-resource_name = "Run"
+[sub_resource type="Animation" id="Animation_rwxk3"]
+resource_name = "Idle"
 length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
@@ -66,10 +59,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("8_1kun1"), ExtResource("9_k4v03"), ExtResource("10_tppt2"), ExtResource("11_v1i6a"), ExtResource("12_vmkst"), ExtResource("13_dcyse")]
+"values": [ExtResource("2_8sv5p"), ExtResource("3_x0kj0"), ExtResource("4_37obr"), ExtResource("5_3bdcs"), ExtResource("6_v3kp0")]
 }
 
 [sub_resource type="Animation" id="Animation_1x3rm"]
@@ -89,8 +82,54 @@ tracks/0/keys = {
 "values": [ExtResource("14_uue1v"), ExtResource("15_dvp7j"), ExtResource("16_3eh0k")]
 }
 
+[sub_resource type="Animation" id="Animation_aqasx"]
+resource_name = "Run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_1kun1"), ExtResource("9_k4v03"), ExtResource("10_tppt2"), ExtResource("11_v1i6a"), ExtResource("12_vmkst"), ExtResource("13_dcyse")]
+}
+
+[sub_resource type="Animation" id="Animation_f3ad4"]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_qt75l"), ExtResource("2_enje8"), ExtResource("19_ubck4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v86s6"]
 _data = {
+"Attack": SubResource("Animation_f3ad4"),
 "Fall": SubResource("Animation_fy6ly"),
 "Idle": SubResource("Animation_rwxk3"),
 "Jump": SubResource("Animation_1x3rm"),
@@ -100,12 +139,29 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ap6fg")
 
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_1pghn")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_x0kj0")
+texture = ExtResource("19_ubck4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_6kk7y")
+
+[node name="AttackArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(19, 4)
+shape = SubResource("CircleShape2D_dchny")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-18, 4)
+shape = SubResource("CircleShape2D_dchny")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

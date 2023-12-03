@@ -1,13 +1,23 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var water_level = $"../WaterLevel"
 
 
 @export var speed := 100.0
 @export var jump_height := -300.0
+@export var attacking = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	GameManager.player = self
+
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("left"):
@@ -37,22 +47,37 @@ func _physics_process(delta):
 	
 	update_animation()
 	move_and_slide()
+	
+#	if position.y >= 300:
+#		drown()
+	
+	if position.y >= 600:
+		die()
+
+func attack():
+	var overlapping_objects = $AttackArea.get_overlapping_areas()
+	for area in overlapping_objects:
+		var parent = area.get_parent()
+		parent.queue_free()
+	
+	attacking = true
+	animation.play("Attack")
 
 func update_animation():
-	if velocity.x != 0:
-		animation.play("Run")
-	else:
-		animation.play("Idle")
-	if velocity.y < 0:
-		animation.play("Jump")
-	if velocity.y > 0:
-		animation.play("Fall")
+	if !attacking:
+		if velocity.x != 0:
+			animation.play("Run")
+		else:
+			animation.play("Idle")
+		if velocity.y < 0:
+			animation.play("Jump")
+		if velocity.y > 0:
+			animation.play("Fall")
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
+func drown():
+#	gravity = 30	# introduces the gravity bug
+	GameManager.drowning()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func die():
+	gravity = 980
+	GameManager.respawn_player()

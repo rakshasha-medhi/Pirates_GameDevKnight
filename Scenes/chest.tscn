@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgosaqxa8v8u"]
+
+[ext_resource type="Texture2D" uid="uid://bq2jqyg5dgu0n" path="res://Treasure Hunters/EpisodeFour/Chest/Chest Close 01.png" id="1_2r84m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0b5h"]
+size = Vector2(32, 24)
+
+[node name="Chest" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_f0b5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2r84m")
