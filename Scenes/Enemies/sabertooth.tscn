@@ -32,6 +32,54 @@ height = 26.0
 radius = 8.0
 height = 26.0
 
+[sub_resource type="Animation" id="Animation_oo1sj"]
+resource_name = "Dead_Hit"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_qbebf"), ExtResource("20_xmqhu"), ExtResource("21_ihkb5"), ExtResource("22_v7f0f"), ExtResource("20_xmqhu"), ExtResource("21_ihkb5"), ExtResource("22_v7f0f")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_a5pir"]
+resource_name = "Hit"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_6gys0"), ExtResource("16_q4ie7"), ExtResource("17_at2fk"), ExtResource("18_yb3y0")]
+}
+
 [sub_resource type="Animation" id="Animation_r1mqp"]
 resource_name = "Idle"
 length = 0.8
@@ -64,54 +112,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("1_syvmk"), ExtResource("10_lsrbi"), ExtResource("11_awmd1"), ExtResource("12_5yhet"), ExtResource("13_4ed43"), ExtResource("14_hdg4f")]
-}
-
-[sub_resource type="Animation" id="Animation_a5pir"]
-resource_name = "Hit"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("15_6gys0"), ExtResource("16_q4ie7"), ExtResource("17_at2fk"), ExtResource("18_yb3y0")]
-}
-
-[sub_resource type="Animation" id="Animation_oo1sj"]
-resource_name = "Dead_Hit"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("19_qbebf"), ExtResource("20_xmqhu"), ExtResource("21_ihkb5"), ExtResource("22_v7f0f"), ExtResource("20_xmqhu"), ExtResource("21_ihkb5"), ExtResource("22_v7f0f")]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fwdvv"]
