@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcoeq4u4viouq"]
+[gd_scene load_steps=21 format=3 uid="uid://bcoeq4u4viouq"]
 
 [ext_resource type="Texture2D" uid="uid://cym5u1f0nctbl" path="res://Treasure Hunters/EpisodeFour/Spritesheet/BG Image.png" id="1_hqn8c"]
 [ext_resource type="PackedScene" uid="uid://tj0d2oeaip0a" path="res://Scenes/Entities/player.tscn" id="2_0m4qq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cccp10q30sa0t" path="res://Scenes/Enemies/sabertooth.tscn" id="13_5q50i"]
 [ext_resource type="PackedScene" uid="uid://cv0u62uj050wf" path="res://Scenes/Interactable/falling_spikes.tscn" id="14_8q08s"]
 [ext_resource type="PackedScene" uid="uid://cuvpwtbx36qpi" path="res://Scenes/Interactable/jumppad.tscn" id="15_xl5ir"]
+[ext_resource type="PackedScene" uid="uid://3db2oho0odwx" path="res://Scenes/Interactable/health_up.tscn" id="16_mklk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byv7c"]
 texture = ExtResource("2_m8j8u")
@@ -1483,20 +1484,28 @@ position = Vector2(416, 136)
 [node name="Sabertooth5" parent="Saberteeth" instance=ExtResource("13_5q50i")]
 position = Vector2(190, 137)
 
-[node name="FallingSpikes" parent="." instance=ExtResource("14_8q08s")]
-position = Vector2(288, 165)
-
-[node name="FallingSpikes2" parent="." instance=ExtResource("14_8q08s")]
-position = Vector2(450, 164)
-
-[node name="FallingSpikes3" parent="." instance=ExtResource("14_8q08s")]
-position = Vector2(689, 213)
-
-[node name="FallingSpikes4" parent="." instance=ExtResource("14_8q08s")]
-position = Vector2(562, 164)
-
 [node name="Jumppad" parent="." instance=ExtResource("15_xl5ir")]
-position = Vector2(785, 297)
+position = Vector2(750, 297)
 
 [node name="Jumppad2" parent="." instance=ExtResource("15_xl5ir")]
 position = Vector2(384, 264)
+
+[node name="FallingSpikesGroup" type="Node2D" parent="."]
+
+[node name="FallingSpikes" parent="FallingSpikesGroup" instance=ExtResource("14_8q08s")]
+position = Vector2(288, 165)
+
+[node name="FallingSpikes2" parent="FallingSpikesGroup" instance=ExtResource("14_8q08s")]
+position = Vector2(450, 164)
+
+[node name="FallingSpikes3" parent="FallingSpikesGroup" instance=ExtResource("14_8q08s")]
+position = Vector2(689, 213)
+
+[node name="FallingSpikes4" parent="FallingSpikesGroup" instance=ExtResource("14_8q08s")]
+position = Vector2(562, 164)
+
+[node name="HealthUp" parent="." instance=ExtResource("16_mklk7")]
+position = Vector2(189, 290)
+
+[node name="HealthUp2" parent="." instance=ExtResource("16_mklk7")]
+position = Vector2(512, 146)
