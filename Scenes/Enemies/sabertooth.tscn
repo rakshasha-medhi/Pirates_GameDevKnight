@@ -127,7 +127,7 @@ collision_layer = 2
 script = ExtResource("1_r7mul")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("19_qbebf")
+texture = ExtResource("2_8wcu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_k07ia")
