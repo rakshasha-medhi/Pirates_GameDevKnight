@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcoeq4u4viouq"]
+[gd_scene load_steps=25 format=3 uid="uid://bcoeq4u4viouq"]
 
 [ext_resource type="Texture2D" uid="uid://cym5u1f0nctbl" path="res://Treasure Hunters/EpisodeFour/Spritesheet/BG Image.png" id="1_hqn8c"]
 [ext_resource type="PackedScene" uid="uid://tj0d2oeaip0a" path="res://Scenes/Entities/player.tscn" id="2_0m4qq"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ixah3kaxvr6h" path="res://Scenes/Interactable/invisible_platform.tscn" id="17_1cb8l"]
 [ext_resource type="PackedScene" uid="uid://poa2kspbtd87" path="res://Scenes/Interactable/R_moving_platform.tscn" id="18_7xxmk"]
 [ext_resource type="PackedScene" uid="uid://biklo01ncd3if" path="res://Scenes/Interactable/L_moving_platform.tscn" id="18_wnyj7"]
+[ext_resource type="PackedScene" uid="uid://dt3wd5mc0f8v2" path="res://Scenes/Interactable/cannon.tscn" id="20_bn56u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byv7c"]
 texture = ExtResource("2_m8j8u")
@@ -1534,3 +1535,16 @@ position = Vector2(423, 68)
 
 [node name="L_MovingPlatform" parent="M-Platform" instance=ExtResource("18_wnyj7")]
 position = Vector2(29, 356)
+
+[node name="Cannon" parent="." instance=ExtResource("20_bn56u")]
+position = Vector2(332, 51)
+
+[node name="Cannon2" parent="." instance=ExtResource("20_bn56u")]
+position = Vector2(643, 51)
+
+[node name="Cannon3" parent="." instance=ExtResource("20_bn56u")]
+position = Vector2(593, 227)
+
+[node name="Cannon4" parent="." instance=ExtResource("20_bn56u")]
+position = Vector2(27, 328)
+scale = Vector2(-1, 1)
