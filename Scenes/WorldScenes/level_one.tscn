@@ -1408,6 +1408,9 @@ position = Vector2(159, 272)
 [node name="Checkpoint2" parent="." instance=ExtResource("5_7u4si")]
 position = Vector2(638, 171)
 
+[node name="Checkpoint3" parent="." instance=ExtResource("5_7u4si")]
+position = Vector2(84, 67)
+
 [node name="WaterLevel" parent="." instance=ExtResource("7_62nnn")]
 position = Vector2(454, 382)
 scale = Vector2(10.52, 0.159993)
@@ -1467,6 +1470,64 @@ offset_bottom = 34.0
 theme_override_colors/font_color = Color(0.199219, 0.195313, 0.238281, 1)
 theme_override_font_sizes/font_size = 24
 text = "0"
+
+[node name="PauseMenu" type="ColorRect" parent="UIManager"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.286275, 0.407843, 0.337255, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/PauseMenu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Restart" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Restart"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WorldMap" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "World Map"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Quit"
 
 [node name="Chest" parent="." instance=ExtResource("12_q30lx")]
 position = Vector2(656, 303)
@@ -1536,15 +1597,23 @@ position = Vector2(423, 68)
 [node name="L_MovingPlatform" parent="M-Platform" instance=ExtResource("18_wnyj7")]
 position = Vector2(29, 356)
 
-[node name="Cannon" parent="." instance=ExtResource("20_bn56u")]
+[node name="Cannons" type="Node2D" parent="."]
+
+[node name="Cannon" parent="Cannons" instance=ExtResource("20_bn56u")]
 position = Vector2(332, 51)
 
-[node name="Cannon2" parent="." instance=ExtResource("20_bn56u")]
+[node name="Cannon2" parent="Cannons" instance=ExtResource("20_bn56u")]
 position = Vector2(643, 51)
 
-[node name="Cannon3" parent="." instance=ExtResource("20_bn56u")]
+[node name="Cannon3" parent="Cannons" instance=ExtResource("20_bn56u")]
 position = Vector2(593, 227)
 
-[node name="Cannon4" parent="." instance=ExtResource("20_bn56u")]
+[node name="Cannon4" parent="Cannons" instance=ExtResource("20_bn56u")]
 position = Vector2(27, 328)
-scale = Vector2(-1, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer/Resume" to="UIManager" method="_on_resume_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer2/Restart" to="UIManager" method="_on_restart_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer3/WorldMap" to="UIManager" method="_on_world_map_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer4/Quit" to="UIManager" method="_on_quit_pressed"]

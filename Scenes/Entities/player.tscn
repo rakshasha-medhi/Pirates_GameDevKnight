@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://tj0d2oeaip0a"]
+[gd_scene load_steps=34 format=3 uid="uid://tj0d2oeaip0a"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_ap6fg"]
 [ext_resource type="Texture2D" uid="uid://durjvmpw1r8be" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_8sv5p"]
 [ext_resource type="Texture2D" uid="uid://ddg13l44xbso0" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 02.png" id="2_enje8"]
+[ext_resource type="Texture2D" uid="uid://1qpyjol5ygxw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 01.png" id="2_miqam"]
 [ext_resource type="Texture2D" uid="uid://dywtmnmhac0b5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_x0kj0"]
 [ext_resource type="Texture2D" uid="uid://cqdlfpdx45aho" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_37obr"]
 [ext_resource type="Texture2D" uid="uid://bk1kwt3wdpwen" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="5_3bdcs"]
@@ -19,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://dkre81t242q48" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png" id="16_3eh0k"]
 [ext_resource type="Texture2D" uid="uid://dt50mg8wnph7k" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 01.png" id="18_qt75l"]
 [ext_resource type="Texture2D" uid="uid://cooa7vy78hdol" path="res://Treasure Hunters/EpisodeSix/16-Attack 2/Attack 2 03.png" id="19_ubck4"]
+[ext_resource type="Texture2D" uid="uid://cuu2rp40jl7ol" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 02.png" id="21_2ekxu"]
+[ext_resource type="Texture2D" uid="uid://deko5bf1jhvpt" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 03.png" id="22_m7rl7"]
+[ext_resource type="Texture2D" uid="uid://byayey62tkx16" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 04.png" id="23_p5w2y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1pghn"]
 radius = 9.0
@@ -76,6 +80,34 @@ tracks/0/keys = {
 "values": [ExtResource("7_p2txj")]
 }
 
+[sub_resource type="Animation" id="Animation_x05mc"]
+resource_name = "Hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_miqam"), ExtResource("21_2ekxu"), ExtResource("22_m7rl7"), ExtResource("23_p5w2y")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_rwxk3"]
 resource_name = "Idle"
 length = 0.5
@@ -131,6 +163,7 @@ tracks/0/keys = {
 _data = {
 "Attack": SubResource("Animation_f3ad4"),
 "Fall": SubResource("Animation_fy6ly"),
+"Hit": SubResource("Animation_x05mc"),
 "Idle": SubResource("Animation_rwxk3"),
 "Jump": SubResource("Animation_1x3rm"),
 "Run": SubResource("Animation_aqasx")
@@ -147,7 +180,7 @@ monitoring = false
 shape = SubResource("CapsuleShape2D_1pghn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("19_ubck4")
+texture = ExtResource("23_p5w2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
