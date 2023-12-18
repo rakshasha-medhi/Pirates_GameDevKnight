@@ -1,7 +1,10 @@
 extends StaticBody2D
+class_name Cannon
 
 var cannon_ball = load("res://Scenes/Interactable/cannon_ball.tscn")
 var debris = load("res://Scenes/Interactable/cannon_debris.tscn")
+
+@export var score = 50
 
 @export var shooting: bool
 var firerate: float = randf_range(1.0, 2.5)
@@ -38,6 +41,7 @@ func take_damage(damage_amount):
 		die()
 
 func die():
+	GameManager.score += score
 	var spawned_debris = debris.instantiate()
 	spawned_debris.global_position = position
 	spawned_debris.scale.x = scale.x

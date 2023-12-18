@@ -1,8 +1,10 @@
 extends CharacterBody2D
-
+class_name Sabertooth
 
 var speed: float = -40.0
 var current_speed: float = 0.0
+
+@export var score = 10
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right: bool = false
@@ -63,6 +65,7 @@ func get_hit():
 		$AnimationPlayer.play("Run")
 		
 func die():
+	GameManager.score += score
 	dead = true
 	speed = 0
 	$AnimationPlayer.play("Dead_Hit")
