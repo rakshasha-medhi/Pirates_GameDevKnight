@@ -1,3 +1,150 @@
-[gd_scene format=3 uid="uid://sglte1ylvgha"]
+[gd_scene load_steps=23 format=3 uid="uid://sglte1ylvgha"]
+
+[ext_resource type="Script" path="res://Scripts/Core/WorldMap.gd" id="1_est0p"]
+[ext_resource type="Texture2D" uid="uid://b2vxgwmpij6t7" path="res://Treasure Hunters/EpisodeFifteen/BigWorldMap.png" id="1_lmssr"]
+[ext_resource type="Texture2D" uid="uid://dkre81t242q48" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png" id="1_pf374"]
+[ext_resource type="Texture2D" uid="uid://durjvmpw1r8be" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_slbu7"]
+[ext_resource type="Script" path="res://Scripts/Core/WorldMapLevel.gd" id="2_y5yx8"]
+[ext_resource type="Texture2D" uid="uid://srctfqa7xeex" path="res://Treasure Hunters/EpisodeFifteen/locked.png" id="3_7pvqx"]
+[ext_resource type="Texture2D" uid="uid://dywtmnmhac0b5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_16aqb"]
+[ext_resource type="Texture2D" uid="uid://cqdlfpdx45aho" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_0c2ko"]
+[ext_resource type="Texture2D" uid="uid://bk1kwt3wdpwen" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="5_u5sah"]
+[ext_resource type="Texture2D" uid="uid://b2fcsdgtdthms" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png" id="6_wapjj"]
+[ext_resource type="Texture2D" uid="uid://cwm5wymc6jk4m" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 01.png" id="7_ngbhy"]
+[ext_resource type="Texture2D" uid="uid://cf26c88c5n66i" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 02.png" id="8_bsqsm"]
+[ext_resource type="Texture2D" uid="uid://cfd1wahx3sqx5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 03.png" id="9_t1j4v"]
+[ext_resource type="Texture2D" uid="uid://o6k2qoumq1ib" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 04.png" id="10_47ug4"]
+[ext_resource type="Texture2D" uid="uid://dvfhxf6liisdq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png" id="11_7qv8a"]
+[ext_resource type="Texture2D" uid="uid://gyj457vh1pqq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png" id="12_vsq7e"]
+[ext_resource type="Texture2D" uid="uid://b0fq7qpy20hfo" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 01.png" id="13_v0pnr"]
+[ext_resource type="Texture2D" uid="uid://byuq7bds336ec" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 02.png" id="14_wpv2l"]
+
+[sub_resource type="Animation" id="Animation_i7wca"]
+resource_name = "Idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_slbu7"), ExtResource("3_16aqb"), ExtResource("4_0c2ko"), ExtResource("5_u5sah"), ExtResource("6_wapjj")]
+}
+
+[sub_resource type="Animation" id="Animation_fjc6w"]
+resource_name = "Run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_ngbhy"), ExtResource("8_bsqsm"), ExtResource("9_t1j4v"), ExtResource("10_47ug4"), ExtResource("11_7qv8a"), ExtResource("12_vsq7e")]
+}
+
+[sub_resource type="Animation" id="Animation_oe07r"]
+resource_name = "Select"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_v0pnr"), ExtResource("14_wpv2l"), ExtResource("1_pf374")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm76s"]
+_data = {
+"Idle": SubResource("Animation_i7wca"),
+"Run": SubResource("Animation_fjc6w"),
+"Select": SubResource("Animation_oe07r")
+}
 
 [node name="WorldMap" type="Node2D"]
+script = ExtResource("1_est0p")
+
+[node name="BGcolor" type="ColorRect" parent="."]
+offset_left = -1985.0
+offset_top = -1935.0
+offset_right = -1585.0
+offset_bottom = -1535.0
+scale = Vector2(10, 10)
+color = Color(0.570313, 0.660156, 0.804688, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -218.0
+offset_top = -174.0
+offset_right = -26.0
+offset_bottom = -50.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_lmssr")
+
+[node name="LevelHolder" type="Node2D" parent="."]
+
+[node name="Level1" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("down")]
+position = Vector2(-149, 29)
+script = ExtResource("2_y5yx8")
+down = NodePath("../Level2")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Level1"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_7pvqx")
+
+[node name="Level2" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("up", "right")]
+position = Vector2(-149, 126)
+script = ExtResource("2_y5yx8")
+up = NodePath("../Level1")
+right = NodePath("../Level3")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Level2"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_7pvqx")
+
+[node name="Level3" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("up", "left")]
+position = Vector2(-53, 126)
+script = ExtResource("2_y5yx8")
+up = NodePath("../Level4")
+left = NodePath("../Level2")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Level3"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_7pvqx")
+
+[node name="Level4" type="Node2D" parent="LevelHolder" node_paths=PackedStringArray("down")]
+position = Vector2(-53, 30)
+script = ExtResource("2_y5yx8")
+down = NodePath("../Level3")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelHolder/Level4"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_7pvqx")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(-149, 19)
+texture = ExtResource("2_slbu7")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_pm76s")
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://tj0d2oeaip0a"]
+[gd_scene load_steps=38 format=3 uid="uid://tj0d2oeaip0a"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_ap6fg"]
 [ext_resource type="Texture2D" uid="uid://durjvmpw1r8be" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_8sv5p"]
@@ -23,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://cuu2rp40jl7ol" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 02.png" id="21_2ekxu"]
 [ext_resource type="Texture2D" uid="uid://deko5bf1jhvpt" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 03.png" id="22_m7rl7"]
 [ext_resource type="Texture2D" uid="uid://byayey62tkx16" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/14-Hit Sword/Hit Sword 04.png" id="23_p5w2y"]
+[ext_resource type="AudioStream" uid="uid://dcn4kt0usammk" path="res://Audio/SFX/sword_attack.wav" id="24_n355v"]
+[ext_resource type="AudioStream" uid="uid://bdx603q3wgo7e" path="res://Audio/SFX/player_jump.wav" id="25_nv64u"]
+[ext_resource type="AudioStream" uid="uid://bi6y5ucgfesnq" path="res://Audio/SFX/player_respawn.wav" id="26_5b11t"]
+[ext_resource type="AudioStream" uid="uid://cchxsvxedpi0l" path="res://Audio/SFX/player_hit.wav" id="27_15yv6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1pghn"]
 radius = 9.0
@@ -197,3 +201,18 @@ shape = SubResource("CircleShape2D_dchny")
 libraries = {
 "": SubResource("AnimationLibrary_v86s6")
 }
+
+[node name="SwordAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_n355v")
+volume_db = -10.0
+autoplay = true
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_nv64u")
+volume_db = -10.0
+
+[node name="PlayerRespawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_5b11t")
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_15yv6")

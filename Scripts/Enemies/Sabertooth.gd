@@ -6,6 +6,8 @@ var current_speed: float = 0.0
 
 @export var score = 10
 
+@onready var sabertooth_hit = $SabertoothHit
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right: bool = false
 var dead: bool = false
@@ -59,6 +61,7 @@ func get_hit():
 		current_speed = speed
 		speed = 0
 		can_attack = false
+		sabertooth_hit.play()
 	else:
 		speed = current_speed
 		can_attack = true

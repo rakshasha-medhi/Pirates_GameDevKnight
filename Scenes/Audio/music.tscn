@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bstfgb6bpcidd"]
 
-[ext_resource type="AudioStream" uid="uid://rq2hxprmu5py" path="res://Audio/Music/childish-prank-21177.wav" id="1_s27d2"]
+[ext_resource type="AudioStream" uid="uid://dkl8dvmphkbpv" path="res://Audio/Music/playful-140946.wav" id="1_84myj"]
 
 [node name="Node" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_s27d2")
+stream = ExtResource("1_84myj")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"

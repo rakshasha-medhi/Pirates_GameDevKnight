@@ -3,7 +3,11 @@ class_name Player
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
-@onready var water_level = $"../WaterLevel"
+@onready var sword_attack = $SwordAttack
+@onready var player_jump = $PlayerJump
+@onready var player_respawn = $PlayerRespawn
+@onready var player_hit = $PlayerHit
+#@onready var water_level = $"../WaterLevel"
 
 
 @export var speed: float = 100.0
@@ -44,6 +48,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 #		animation.play("Jump")
 		velocity.y = jump_height
+		player_jump.play()
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice,you should replace UI actions with custom gameplay actions.
@@ -76,6 +81,9 @@ func attack():
 	
 	attacking = true
 	animation.play("Attack")
+	sword_attack.play()
+#	await sword_attack.finished
+	
 
 func update_animation():
 	if !attacking && !hit:
@@ -99,6 +107,7 @@ func take_damage(damage_amount: int):
 		hit = true
 		attacking = false
 		animation.play("Hit")
+		player_hit.play()
 		
 		GameManager.damage_taken += 1
 		
@@ -117,3 +126,4 @@ func die():
 	# add die animation
 	gravity = 980
 	GameManager.respawn_player()
+	player_respawn.play()

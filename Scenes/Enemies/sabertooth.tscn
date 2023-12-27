@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cccp10q30sa0t"]
+[gd_scene load_steps=33 format=3 uid="uid://cccp10q30sa0t"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Sabertooth.gd" id="1_r7mul"]
 [ext_resource type="Texture2D" uid="uid://m4ch3h02ne3s" path="res://Treasure Hunters/EpisodeSeven/02-Run/Run 01.png" id="1_syvmk"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cfxswtsdpca22" path="res://Treasure Hunters/EpisodeSeven/09-Dead Hit/Dead Hit 02.png" id="20_xmqhu"]
 [ext_resource type="Texture2D" uid="uid://bn512rou0vs1s" path="res://Treasure Hunters/EpisodeSeven/09-Dead Hit/Dead Hit 03.png" id="21_ihkb5"]
 [ext_resource type="Texture2D" uid="uid://dbap8w7lnub8b" path="res://Treasure Hunters/EpisodeSeven/09-Dead Hit/Dead Hit 04.png" id="22_v7f0f"]
+[ext_resource type="AudioStream" uid="uid://7il2sgskn45" path="res://Audio/SFX/sabertooth_hit.wav" id="25_gl47d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k07ia"]
 radius = 9.0
@@ -167,5 +168,9 @@ target_position = Vector2(0, 15)
 libraries = {
 "": SubResource("AnimationLibrary_fwdvv")
 }
+
+[node name="SabertoothHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_gl47d")
+autoplay = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
